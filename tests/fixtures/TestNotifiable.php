@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Besanek\LaravelFirebaseNotifications\Tests\Fixtures;
 
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Notifications\Notification;
 
 class TestNotifiable {
 
@@ -21,9 +22,10 @@ class TestNotifiable {
     }
 
     /**
+     * @param Notification $notification
      * @return mixed
      */
-    public function routeNotificationForFirebase()
+    public function routeNotificationForFirebase(Notification $notification)
     {
         return $this->targets;
     }

@@ -44,7 +44,7 @@ class FirebaseChannel
             );
         }
 
-        $targets = $notifiable->routeNotificationFor('firebase');
+        $targets = $notifiable->routeNotificationFor('firebase', $notification);
         $targets = !$targets ? [] : Arr::wrap($targets);
         $this->validateTargets($targets);
 
