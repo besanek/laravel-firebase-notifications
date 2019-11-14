@@ -1,7 +1,7 @@
 {
     "name": "besanek/laravel-firebase-notifications",
     "description": "Thin layer for integrate Firebase Messaging as Laravel Notifications",
-    "keywords": ["filesystem", "laravel", "notifications", "firebase", "l5"],
+    "keywords": ["filesystem", "laravel", "notifications", "firebase", "l5", "l6"],
     "type": "library",
     "require": {
         "illuminate/notifications": "^5.5|^6.0",
