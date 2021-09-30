@@ -4,8 +4,8 @@ Thin layer for integrate Firebase Messaging as Laravel Notifications
 
 ## Requirement
 
--   PHP >= 7.1
--   Laravel >= 5.5 or 6.x
+-   PHP = 7.4, 8.x
+-   Laravel = 8.x
 
 ## Installing
 
@@ -17,21 +17,8 @@ This is all, thanks to the Package Autodiscover.
 
 ## Setup
 
-Just place your Firebase credentials JSON to `storage/firebase.credentials.json`.
+Please follow configuration guide of [kreait/laravel-firebase](https://github.com/kreait/laravel-firebase#configuration)
 
-### Advenced setup
-
-Alternatively you can change file location using *.env* file.
-
-```dotenv
-FIREBASE_CREDENTIALS="/etc/firebase.credentials.json"
-```
-
-Or place JSON content directly to environment. It's cool for cloud services.
-
-```dotenv
-FIREBASE_CREDENTIALS="{\"type\": \"service_account\", ...}"
-```
 
 ## Basic Usage
 

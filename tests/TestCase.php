@@ -5,6 +5,7 @@ namespace Besanek\LaravelFirebaseNotifications\Tests;
 
 use Besanek\LaravelFirebaseNotifications\FirebaseServiceProvider;
 use Illuminate\Foundation\Application;
+use Kreait\Laravel\Firebase\ServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 class TestCase extends OrchestraTestCase
@@ -16,6 +17,6 @@ class TestCase extends OrchestraTestCase
      */
     protected function getPackageProviders($app): array
     {
-        return [FirebaseServiceProvider::class];
+        return [ServiceProvider::class, FirebaseServiceProvider::class];
     }
 }

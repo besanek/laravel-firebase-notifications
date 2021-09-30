@@ -1,19 +1,19 @@
 {
     "name": "besanek/laravel-firebase-notifications",
     "description": "Thin layer for integrate Firebase Messaging as Laravel Notifications",
-    "keywords": ["filesystem", "laravel", "notifications", "firebase", "l5", "l6"],
+    "keywords": ["filesystem", "laravel", "notifications", "firebase"],
     "type": "library",
     "require": {
-        "illuminate/notifications": "^5.5|^6.0",
-        "illuminate/support": "^5.5|^6.0",
-        "php": "~7.1",
-        "kreait/firebase-php": "~4.18",
+        "illuminate/notifications": "^8.0",
+        "illuminate/support": "^8.0",
+        "php": "^7.4|^8.0",
+        "kreait/laravel-firebase": "^3.1",
         "ext-json": "*"
     },
     "require-dev": {
-        "orchestra/testbench": "^3.8|^4.0",
-        "phpunit/phpunit": "^7.0|^8.0",
-        "mockery/mockery": "~1.0"
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0",
+        "mockery/mockery": "^1.4.2"
     },
     "authors": [
         {

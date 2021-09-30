@@ -48,13 +48,28 @@ class FirebaseChannel
         $targets = !$targets ? [] : Arr::wrap($targets);
         $this->validateTargets($targets);
 
+        return $this->sendToTargets($message, $targets);
+    }
+
+    /**
+     * @param Messaging\Message $message
+     * @param array $targets
+     * @return MulticastSendReport
+     * @throws \Kreait\Firebase\Exception\FirebaseException
+     * @throws \Kreait\Firebase\Exception\MessagingException
+     */
+    protected function sendToTargets(Messaging\Message $message, array $targets): MulticastSendReport
+    {
+        if (empty($targets)) {
+            return MulticastSendReport::withItems([]);
+        }
         return $this->messaging->sendMulticast($message, $targets);
     }
 
     /**
      * @param array $targets
      */
-    private function validateTargets(array $targets): void
+    protected function validateTargets(array $targets): void
     {
         foreach ($targets as $target) {
             if (!is_string($target)) {
