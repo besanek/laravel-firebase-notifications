@@ -4,32 +4,21 @@ declare(strict_types=1);
 namespace Besanek\LaravelFirebaseNotifications;
 
 use Besanek\LaravelFirebaseNotifications\Exceptions\ChannelException;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Arr;
-use Kreait\Firebase\Messaging;
+use Kreait\Firebase\Contract\Messaging;
+use Kreait\Firebase\Messaging\Message;
 use Kreait\Firebase\Messaging\MulticastSendReport;
 
 class FirebaseChannel
 {
-    /**
-     * @var Messaging
-     */
-    private $messaging;
+    private Messaging $messaging;
 
-    /**
-     * @param Messaging $messaging
-     */
     public function __construct(Messaging $messaging)
     {
         $this->messaging = $messaging;
     }
 
-    /**
-     * @param Notifiable $notifiable
-     * @param Notification $notification
-     * @return MulticastSendReport
-     */
     public function send($notifiable, Notification $notification): MulticastSendReport
     {
         if (!method_exists($notification, 'toFirebase')) {
@@ -38,9 +27,9 @@ class FirebaseChannel
 
         $message = $notification->toFirebase();
 
-        if (!$message instanceof Messaging\Message) {
+        if (!$message instanceof Message) {
             throw new ChannelException(
-                'Channel expected return type %s, %s is returned', Messaging\Message::class, gettype($message)
+                'Channel expected return type %s, %s is returned', Message::class, gettype($message)
             );
         }
 
@@ -52,13 +41,11 @@ class FirebaseChannel
     }
 
     /**
-     * @param Messaging\Message $message
-     * @param array $targets
-     * @return MulticastSendReport
+     * @param array<string> $targets
      * @throws \Kreait\Firebase\Exception\FirebaseException
      * @throws \Kreait\Firebase\Exception\MessagingException
      */
-    protected function sendToTargets(Messaging\Message $message, array $targets): MulticastSendReport
+    protected function sendToTargets(Message $message, array $targets): MulticastSendReport
     {
         if (empty($targets)) {
             return MulticastSendReport::withItems([]);
@@ -67,7 +54,7 @@ class FirebaseChannel
     }
 
     /**
-     * @param array $targets
+     * @param array<string> $targets
      */
     protected function validateTargets(array $targets): void
     {
