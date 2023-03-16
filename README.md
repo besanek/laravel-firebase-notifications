@@ -4,8 +4,8 @@ Thin layer for integrate Firebase Messaging as Laravel Notifications
 
 ## Requirement
 
--   PHP = 8.x
--   Laravel = 9.x
+-   PHP >= 8.1
+-   Laravel = 10.x
 
 ## Installing
 

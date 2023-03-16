@@ -4,14 +4,14 @@
     "keywords": ["filesystem", "laravel", "notifications", "firebase"],
     "type": "library",
     "require": {
-        "illuminate/notifications": "^9.0",
-        "illuminate/support": "^9.0",
+        "illuminate/notifications": "^10.0",
+        "illuminate/support": "^10.0",
         "php": "^8.0",
-        "kreait/laravel-firebase": "^4.1",
+        "kreait/laravel-firebase": "^5.1",
         "ext-json": "*"
     },
     "require-dev": {
-        "orchestra/testbench": "^7.0",
+        "orchestra/testbench": "^8.0",
         "phpunit/phpunit": "^9.0",
         "mockery/mockery": "^1.4.2"
     },
