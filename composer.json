@@ -9,15 +9,15 @@
     "keywords": ["filesystem", "laravel", "notifications", "firebase"],
     "type": "library",
     "require": {
-        "illuminate/notifications": "^11.0|^12.0",
-        "illuminate/support": "^11.0|^12.0",
+        "illuminate/notifications": "^11.0|^12.0|^13.0",
+        "illuminate/support": "^11.0|^12.0|^13.0",
         "php": "^8.3",
         "kreait/laravel-firebase": "^7.0",
         "ext-json": "*"
     },
     "require-dev": {
-        "orchestra/testbench": "^9.0|^10.0",
-        "phpunit/phpunit": "^10.0|^11.0",
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "phpunit/phpunit": "^10.0|^11.0|^12.0|^13.0",
         "mockery/mockery": "^1.4.2"
     },
     "authors": [
